@@ -2,7 +2,7 @@
 
 _**Teacher:**_ Romeu Sequeira 
 
-**_Discipline:_** Sistemas Operativos 
+**_Discipline:_** Sistemas Distribuidos
 
 **_Students:_** Ricardo Cunha, Rodrigo Siqueira e Ronilson Gomes 
 
