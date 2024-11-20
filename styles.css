@@ -31,12 +31,33 @@ background-position: center;
     border: none;
 }
 
-.button.button:haver{
-    background-color: black;
+
+.dfbutton{
+    cursor: pointer;
+    background-color: #a3fdff;
+    height: 60px;
+    width: 60px;
+    color:black;
+    font-size: 25px;
+    border: none;
 }
+
+.button:hover{
+    background-color: rgb(211, 209, 209);
+}
+
+.dfbutton:hover{
+    background-color: rgb(169, 213, 213);
+}
+
+
 
 #result{
     font-family: 'Times New Roman', Times, serif;
-    background-color: #FFF;
     text-align: right;
+    background-color: #FFF;
+    color: black;
+    margin: 6px;
+    padding: 8px;
+    border:10px;
 }
