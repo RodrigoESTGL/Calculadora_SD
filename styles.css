@@ -1,3 +1,8 @@
+body {
+height: 100%; /*Garante que vai ocupar 100% da altura do background*/
+overflow: hidden; /*Tira a barra de rolagem do projeto*/
+}
+
 
 .background{
 background-image: url(image/bk-1.jpg);
@@ -5,6 +10,7 @@ font-family: 'Times New Roman', Times, serif;
 height: 100vh;
 color:black;
 text-align: center;
+background-size: cover;
 }
 
 .calculadora{
