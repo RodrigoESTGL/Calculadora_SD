@@ -1,18 +1,42 @@
 
 .background{
-background-image: linear-gradient(10deg,#808080,#000);
+background-image: url(image/bk-1.jpg);
 font-family: 'Times New Roman', Times, serif;
 height: 100vh;
-color: azure;
+color:black;
 text-align: center;
 }
 
 .calculadora{
-text-align: left;
+position: absolute;
+background-color: black;
+text-align: center;
 font-size: 18px;
+color: #FFF;
+border: 30px;
+padding: 10px;
+border-radius: 20px;
+top: 20%;
+left: 40%;
+background-position: center;
 }
 
 .button{
-    background-color: aqua;
+    cursor: pointer;
+    background-color: #FFF;
+    height: 60px;
+    width: 60px;
     color:black;
+    font-size: 25px;
+    border: none;
+}
+
+.button.button:haver{
+    background-color: black;
+}
+
+#result{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #FFF;
+    text-align: right;
 }
