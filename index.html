@@ -12,50 +12,52 @@
         <div class="calculadora">
             
             <h2>Calculadora RRR</h2>
-            <p id="result">dsadasd</p>
+            <p id="result"></p>
 
             <table>
                 <tr>
-                    <td><button class="button">%</button></td>
-                    <td><button class="button">CE</button></td>
-                    <td><button class="button">C</button></td>
-                    <td><button class="button">&lt;</button></td> <!--&lt representa o sinal de (<)-->
+                    <td><button class="button" onclick="insert('%')">%</button></td>
+                    <td><button class="button" onclick="clean()">CE</button></td>
+                    <td><button class="button" onclick="clean()">C</button></td>
+                    <td><button class="button" onclick="delete_Number()">&lt;</button></td> <!--&lt representa o sinal de (<)-->
                 </tr>
 
                 <tr>
-                    <td><button class="button">1/x</button></td>
-                    <td><button class="button">x<sup>2</sup></button></td>
-                    <td><button class="button"> &radic;x</button></td> <!--Representação do radical (&radic)-->
-                    <td><button class="button" style="font-size: 33px;">&divide;</button></td> <!--&divide representa o sinal de (divisão)-->
+                    <td><button class="button" onclick="insert('/')">1/x</button></td>
+                    <td><button class="button" onclick="insert('<sup>2</sup>')">x<sup>2</sup></button></td>
+                    <td><button class="button" onclick="insert('&radic')"> &radic;x</button></td> <!--Representação do radical (&radic)-->
+                    <td><button class="button" style="font-size: 33px;" onclick="insert('&divide')">&divide;</button></td> <!--&divide representa o sinal de (divisão)-->
                 <tr>
-                    <td><button class="button">7</button></td>
-                    <td><button class="button">8</button></td>
-                    <td><button class="button">9</button></td>
-                    <td><button class="button">x</button></td>
+                    <td><button class="button" onclick="insert('7')">7</button></td>
+                    <td><button class="button" onclick="insert('8')">8</button></td>
+                    <td><button class="button" onclick="insert('9')">9</button></td>
+                    <td><button class="button" onclick="insert('x')">x</button></td>
                 </tr>
 
                 <tr>
-                    <td><button class="button">4</button></td>
-                    <td><button class="button">5</button></td>
-                    <td><button class="button">6</button></td>
-                    <td><button class="button">-</button></td>
+                    <td><button class="button" onclick="insert('4')">4</button></td>
+                    <td><button class="button" onclick="insert('5')">5</button></td>
+                    <td><button class="button" onclick="insert('6')">6</button></td>
+                    <td><button class="button" onclick="insert('-')">-</button></td>
                 </tr>
 
                 <tr>
-                    <td><button class="button">1</button></td>
-                    <td><button class="button">2</button></td>
-                    <td><button class="button">3</button></td>
-                    <td><button class="button">+</button></td>
+                    <td><button class="button" onclick ="insert('1')">1</button></td>
+                    <td><button class="button" onclick ="insert('2')">2</button></td>
+                    <td><button class="button" onclick ="insert('3')">3</button></td>
+                    <td><button class="button" onclick ="insert('+')">+</button></td>
                 </tr>
 
                 <tr>
-                    <td><button class="button">+/-</button></td>
-                    <td><button class="button">0</button></td>
-                    <td><button class="button">,</button></td>
-                    <td><button class="dfbutton">=</button></td>
+                    <td><button class="button" onclick="NegativeNumber()">+/-</button></td>
+                    <td><button class="button" onclick = "insert('0')">0</button></td>
+                    <td><button class="button" onclick="insert(',')">,</button></td>
+                    <td><button class="dfbutton" onclick="egual()">=</button></td>
                 </tr>
             </table>
         </div>
     </div>
+
+    <script src="JS/index.js"></script> <!--Caminho JavaScript-->
 </body>
 </html>
