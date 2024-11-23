@@ -28,7 +28,7 @@ function clean(){
 
 function delete_Number(){
 var result = document.getElementById("result").innerHTML;
-document.getElementById("result").innerHTML = result.substring(0, result.length -2);
+document.getElementById("result").innerHTML = result.substring(0, result.length -1);
 }
 
 function egual(){
