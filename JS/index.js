@@ -5,10 +5,20 @@ function insert(num){
     
     let result = document.getElementById("result").innerHTML;
 
-    if (result.length < maxcaracter){
-        document.getElementById("result").innerHTML += num;
+    if (result.length <= maxcaracter){
+        let lastChar = result.slice(-1) //armazena na variavel o ultimo valor inserido  
+
+        let operators = ['+','-','÷','%', 'x', '√', ','];
+        
+        if (operators.includes(num) && lastChar.includes(num) && fatorial.length(num)){
+            return;
+        }
+        else{
+                document.getElementById("result").innerHTML += num;
+            }
     }   
 }
+
 
 let isNegative = false;
 function NegativeNumber() {
@@ -20,6 +30,9 @@ function NegativeNumber() {
         document.getElementById("result").innerHTML = result.substring(0, result.length -1);
     }
 }
+
+let positive = false; 
+
 
 
 function clean(){
