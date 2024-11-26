@@ -1,19 +1,19 @@
-body {
-height: 100%; /*Garante que vai ocupar 100% da altura do background*/
+body { 
 overflow: hidden; /*Tira a barra de rolagem do projeto*/
 }
 
 
 .background{
 background-image: url(image/bg-3.jpg);
-font-family: 'Times New Roman', Times, serif;
 height: 100vh;
 color:black;
 text-align: center;
 background-size: cover;
+
 }
 
 .calculadora{
+font-family: 'Times New Roman', Times, serif;
 position: absolute;
 background-color: black;
 text-align: center;
@@ -66,4 +66,21 @@ background-position: center;
     color: black;
     margin: 6px;
     padding: 5px;
+}
+
+#logoIPV{
+    position: absolute;
+    height: 500px;
+    width: 800px;
+    top: 670px;
+    left: 2%;
+    
+}
+
+#logoESTGL{
+    position: absolute;
+    height: 500px;
+    width: 800px;
+    top: 690px;
+    right:-33%;
 }
