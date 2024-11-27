@@ -48,9 +48,9 @@ function egual(){
 var result= document.getElementById('result').innerHTML; 
 
 if (result){
-
-
+    let data_to_send = retrieve_data();
+    fetch_and_send(data_to_send, 'http://localhost:3000/calculate');
 } else{
-    document.getElementById("result").innerHTML = "Impossível calcular esta operação.";
+    document.getElementById("result").innerHTML = "";
 }
 }
