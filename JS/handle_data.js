@@ -1,10 +1,14 @@
 function retrieve_data() {
-    const paragrafo = document.getElementById("result");
+    let paragrafo = document.getElementById("result");
     let data = paragrafo.textContent;
 
     console.log("Texto do resultado: ", data);
 
-    const data_to_send = {
+    let data_split = data.split(/[+-/x]/);
+
+    console.log(data_split);
+
+    let data_to_send = {
         message: data,
         timeStamp: new Date()
     };
@@ -23,7 +27,7 @@ function fetch_and_send(data_to_send, endpoint) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            document.getElementById("result").textContent = `${JSON.stringify(data)}`;
+            document.getElementById("result").textContent = `${JSON.stringify(data.message)}`;
         })
         .catch(error => {
             console.log(error);
