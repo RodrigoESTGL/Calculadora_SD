@@ -84,3 +84,10 @@ background-position: center;
     top: 690px;
     right:-33%;
 }
+
+#logo3R{
+    text-align: center;
+    position: relative;
+    height:60px;
+    width: 120px;
+}
