@@ -8,7 +8,7 @@ function insert(num){
     if (result.length <= maxcaracter){
         let lastChar = result.slice(-1) //armazena na variavel o ultimo valor inserido  
 
-        let operators = ['+','-','÷','%', 'x', '√', ','];
+        let operators = ['+','-','/','%', 'x', '√', ','];
         
         if (operators.includes(num) && lastChar.includes(num) && fatorial.length(num)){
             return;

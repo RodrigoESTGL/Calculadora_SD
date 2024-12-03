@@ -9,15 +9,15 @@ app.post('/calculate', (req, res) => {
     const data = req.body;
     let str_eval = JSON.stringify(data.message);
     let calcStatus = false;
-    let resultado = 0;
+    let resultado;
 
     console.log('Dados recebidos:', data);
     console.log(str_eval);
+    console.log(eval("6+5"));
     console.log(eval(str_eval));
 
     try {
-        resultado = eval(str_eval);
-        resultado2 = resultado;
+        resultado = eval("2+2");
         calcStatus = true;
     } catch(error) {
         resultado = error.message;
