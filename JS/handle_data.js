@@ -4,9 +4,11 @@ function retrieve_data() {
 
     console.log("Texto do resultado: ", data);
 
-    let data_split = data.split(/[+-/x]/);
+    let numbers_split = data.split(/[+-/x]/);
+    let opeators_match = data.match(/[+\-x/]/g);
 
-    console.log(data_split);
+    console.log(numbers_split);
+    console.log(opeators_match);
 
     let data_to_send = {
         message: data,
