@@ -5,13 +5,22 @@ function retrieve_data() {
     console.log("Texto do resultado: ", data);
 
     let numbers_split = data.split(/[+-/x]/);
-    let opeators_match = data.match(/[+\-x/]/g);
+    let operators_match = data.match(/[+\-x/]/g);
+
+    if (numbers_split === null) {
+        numbers_split = [];
+    }
+
+    if (operators_match === null) {
+        operators_match = [];
+    }
 
     console.log(numbers_split);
-    console.log(opeators_match);
+    console.log(operators_match);
 
     let data_to_send = {
-        message: data,
+        numbers: numbers_split,
+        operators: operators_match,
         timeStamp: new Date()
     };
 
@@ -28,8 +37,23 @@ function fetch_and_send(data_to_send, endpoint) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            document.getElementById("result").textContent = `${JSON.stringify(data.message)}`;
+
+            if (data.status === false) {
+                //Mostra o erro parando tudo
+                document.getElementById("result").textContent = data.message;
+                document.getElementById("result").style.color = "red";
+                document.body.style.pointerEvents = "none";
+            
+                //Espera 2 segundos para voltar ao normal
+                setTimeout(() => {
+                    document.getElementById("result").style.color = "black";
+                    document.getElementById("result").textContent = "";
+                    document.body.style.pointerEvents = "auto";
+                }, 2000);
+            } else {
+                document.getElementById("result").textContent = `${JSON.stringify(data.message)}`;
+            }
+
         })
         .catch(error => {
             console.log(error);

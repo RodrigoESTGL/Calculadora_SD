@@ -7,21 +7,25 @@ app.use(express.json());
 
 app.post('/calculate', (req, res) => {
     const data = req.body;
-    let str_eval = JSON.stringify(data.message);
+    let operators = data.operators;
+    let numbers = data.numbers;
     let calcStatus = false;
     let resultado;
 
-    console.log('Dados recebidos:', data);
-    console.log(str_eval);
-    console.log(eval("6+5"));
-    console.log(eval(str_eval));
+    console.log(operators.length);
+    console.log(numbers.length);
 
-    try {
-        resultado = eval("2+2");
-        calcStatus = true;
-    } catch(error) {
-        resultado = error.message;
+    if (numbers.length !== operators.length + 1) {
+        resultado = "Formato inválido";
         calcStatus = false;
+    } else {
+        try {
+            resultado = eval("2+2");
+            calcStatus = true;
+        } catch(error) {
+            resultado = error.message;
+            calcStatus = false;
+        }
     }
 
     const response = {
