@@ -1,8 +1,7 @@
 body { 
-overflow: hidden; /*Tira a barra de rolagem do projeto*/
-user-select: none;
-}
-
+    overflow: hidden; /*Tira a barra de rolagem do projeto*/
+    user-select: none;
+    }
 
 .background{
 background-image: url(image/bg-3.jpg);
@@ -37,7 +36,6 @@ background-position: center;
     font-size: 25px;
     border: none;
 }
-
 
 .dfbutton{
     cursor: pointer;
@@ -75,20 +73,169 @@ background-position: center;
     width: 800px;
     top: 670px;
     left: 2%;
+}
     
-}
-
-#logoESTGL{
-    position: absolute;
-    height: 500px;
-    width: 800px;
-    top: 690px;
-    right:-33%;
-}
-
-#logo3R{
+    
+    .background{
+    background-image: url(image/bg-3.jpg);
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat; /*Evita repetições*/
+    background-position: center;
+    color: black;
     text-align: center;
-    position: relative;
-    height:60px;
-    width: 120px;
+    
+    }
+    
+    .calculadora{
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    background-color: black;
+    text-align: center;
+    font-size: 18px;
+    color: #FFF;
+    border: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    top: 20%;
+    left: 40%;
+    background-position: center;
+    }
+    
+    .button{
+        cursor: pointer;
+        background-color: #FFF;
+        height: 60px;
+        width: 60px;
+        color:black;
+        font-size: 25px;
+        border: none;
+    }
+    
+    
+    .dfbutton{
+        cursor: pointer;
+        background-color: #a3fdff;
+        height: 60px;
+        width: 60px;
+        color:black;
+        font-size: 25px;
+        border: none;
+    }
+    
+    .button:hover{
+        background-color: rgb(211, 209, 209);
+    }
+    
+    .dfbutton:hover{
+        background-color: rgb(169, 213, 213);
+    }
+    
+    #result{
+        height: 30px;
+        width: 233px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: right;
+        background-color: #FFF;
+        color: black;
+        margin: 6px;
+        padding: 5px;
+    }
+    
+    #logoIPV{
+        position: absolute;
+        height: 500px;
+        width: 800px;
+        top: 670px;
+        left: 2%;
+        
+    }
+    
+    #logoESTGL{
+        position: absolute;
+        height: 500px;
+        width: 800px;
+        top: 690px;
+        right:-33%;
+    }
+    
+    #logo3R{
+        text-align: center;
+        position: relative;
+        height:60px;
+        width: 120px;
+    }
+
+/* Responsividade (tela média)*/
+@media (max-width: 768px) {
+    .calculadora {
+        position: absolute;
+        left: 220px;
+        width: 217px;
+        font-size: 16px;
+        padding: 15;
+        background-position: center;
+
+    }
+
+    .button, .dfbutton {
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+    }
+
+    #result {
+        height: 30px;
+        width: 195px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: right;
+        background-color: #FFF;
+        color: black;
+        margin: 6px;
+        padding: 5px;
+    }
+
+    #logoIPV {
+        position: absolute;
+        height: 300px;
+        width: 500px;
+        top: 680px;
+        left: 5%;
+    }
+
+    #logoESTGL {
+        position: absolute;
+        height: 300px;
+        width: 500px;
+        top: 690px;
+        right: -310px;
+    }
+}
+
+/*Responsividade (tela pequena)*/
+@media (max-width: 560px) {
+    .calculadora {
+        width: 176px;
+        padding: 10px;
+        left: 150px;
+    }
+
+    .button, .dfbutton {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+    }
+
+    #result {
+        font-size: 16px;
+        height: 20px;
+        width: 156px;
+    }
+
+    #logoIPV, #logoESTGL {
+        display: none; /* Oculta as logos */
+    }
 }
