@@ -1,5 +1,6 @@
 body { 
 overflow: hidden; /*Tira a barra de rolagem do projeto*/
+user-select: none;
 }
 
 
