@@ -9,7 +9,7 @@ app.post('/calculate', (req, res) => {
     const data = req.body;
     let operators = data.operators;
     let numbers = data.numbers;
-    let calcStatus = false;
+    let calcStatus = true;
     let resultado;
     let index;
     let result;
@@ -30,17 +30,11 @@ app.post('/calculate', (req, res) => {
             }
         }
 
-        try {
-            resultado = eval("2+2");
-            calcStatus = true;
-        } catch(error) {
-            resultado = error.message;
-            calcStatus = false;
-        }
+        result = numbers[0];
     }
 
     const response = {
-        message: resultado,
+        message: result,
         status: calcStatus,
         timestamp: new Date()
     };
