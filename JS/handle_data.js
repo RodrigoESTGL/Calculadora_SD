@@ -4,8 +4,13 @@ function retrieve_data() {
 
     console.log("Texto do resultado: ", data);
 
-    let numbers_split = data.split(/[+-/x]/);
-    let operators_match = data.match(/[+\-x/]/g);
+    //Divide em numeros e operadores
+    let numbers_split = data.split(/[+-/x√]/);
+    let operators_match = data.match(/[+\-x√/]/g);
+
+    //Retira valores vazios
+    numbers_split = numbers_split.filter(v => v != '')
+    operators_match = operators_match.filter(v => v != '')
 
     if (numbers_split === null) {
         numbers_split = [];
@@ -57,6 +62,6 @@ function fetch_and_send(data_to_send, endpoint) {
         })
         .catch(error => {
             console.log(error);
-            document.getElementById("result").innerHTML = "Ocorreu um erro ao enviar os dados.";
+            alert("Ocorreu um erro ao enviar os dados. Verifique se o servidor está a rodar!")
         });
 }
