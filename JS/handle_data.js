@@ -1,6 +1,7 @@
 function retrieve_data() {
     let paragrafo = document.getElementById("result");
     let data = paragrafo.textContent;
+    let index;
 
     console.log("Texto do resultado: ", data);
 
@@ -11,6 +12,13 @@ function retrieve_data() {
     //Retira valores vazios
     numbers_split = numbers_split.filter(v => v != '')
     operators_match = operators_match.filter(v => v != '')
+
+    //Se tiver alguma raiz quadrada coloca um vazio nos numeros atras
+    for (let i = 0; i < operators_match.length; i++) {
+        if (operators_match[i] === '√') {
+            numbers_split.splice(i, 0, '');
+        }
+    }
 
     if (numbers_split === null) {
         numbers_split = [];
