@@ -2,23 +2,14 @@ function retrieve_data() {
     let paragrafo = document.getElementById("result");
     let data = paragrafo.textContent;
     let index;
+    let numbers_split;
+    let operators_match;
 
     console.log("Texto do resultado: ", data);
 
     //Divide em numeros e operadores
-    let numbers_split = data.split(/[+\-x√]/);
-    let operators_match = data.match(/[+\-x√/]/g);
-
-    //Retira valores vazios
-    numbers_split = numbers_split.filter(v => v != '')
-    operators_match = operators_match.filter(v => v != '')
-
-    //Se tiver alguma raiz quadrada coloca um vazio nos numeros atras
-    for (let i = 0; i < operators_match.length; i++) {
-        if (operators_match[i] === '√') {
-            numbers_split.splice(i, 0, '');
-        }
-    }
+    numbers_split = data.split(/[+\-x√]/);
+    operators_match = data.match(/[+\-x√/]/g);
 
     if (numbers_split === null) {
         numbers_split = [];
@@ -26,6 +17,24 @@ function retrieve_data() {
 
     if (operators_match === null) {
         operators_match = [];
+    }
+
+    //Retira valores vazios
+
+    if (numbers_split !== null) {
+        numbers_split = numbers_split.filter(v => v != '');
+    }
+    
+    if (operators_match !== null) {
+        operators_match = operators_match.filter(v => v != '');
+    }
+    
+
+    //Se tiver alguma raiz quadrada coloca um vazio nos numeros atras
+    for (let i = 0; i < operators_match.length; i++) {
+        if (operators_match[i] === '√') {
+            numbers_split.splice(i, 0, '');
+        }
     }
 
     console.log(numbers_split);

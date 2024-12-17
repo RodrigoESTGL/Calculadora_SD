@@ -12,6 +12,7 @@ app.post('/calculate', (req, res) => {
     let calcStatus = true;
     let resultado;
     let index;
+    let numbercut;
     let result;
 
     if (numbers.length !== operators.length + 1) {
@@ -19,7 +20,20 @@ app.post('/calculate', (req, res) => {
         calcStatus = false;
     } else {
 
-        //Primeiro procura por raízes quadradas
+        //Procura por percentagens
+        for (let i = 0; i < numbers.length; i++) { //Indices dos numeros
+            index = numbers[i];
+
+            if (index[index.length - 1] === "%") {
+                index.slice(0, index.length-2);
+                result = percentage(parseFloat(index));
+                console.log(result);
+                numbers.splice(i, 1);
+                numbers.splice(i, 0, result);
+            }
+        }
+
+        //Procura por raízes quadradas
         for (let i = 0; i < operators.length; i++) {
             if (operators[i] === '√') {
                 result = squareroot(numbers[i+1]);
@@ -108,4 +122,8 @@ const div = (a, b) => {
 
 const squareroot = a => {
     return Math.sqrt(a);
+}
+
+const percentage = a => {
+    return a/100;
 }
