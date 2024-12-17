@@ -6,7 +6,7 @@ function retrieve_data() {
     console.log("Texto do resultado: ", data);
 
     //Divide em numeros e operadores
-    let numbers_split = data.split(/[+-/x√]/);
+    let numbers_split = data.split(/[+\-x√]/);
     let operators_match = data.match(/[+\-x√/]/g);
 
     //Retira valores vazios

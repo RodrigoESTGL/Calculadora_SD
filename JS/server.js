@@ -23,6 +23,44 @@ app.post('/calculate', (req, res) => {
         for (let i = 0; i < operators.length; i++) {
             if (operators[i] === '√') {
                 result = squareroot(numbers[i+1]);
+                operators.splice(i, 1); //Remove a raiz
+                numbers.splice(i+1, 1); //Remove o numero
+                numbers.splice(i, 1); //Remove o valor anterior
+                numbers.splice(i, 0, result); //Insere resultado
+            }
+        }
+
+        //Procura por multiplicações e divisões
+        for (let i = 0; i < operators.length; i++) {
+            if (operators[i] === 'x') {
+                result = mult(numbers[i], numbers[i+1]);
+                operators.splice(i, 1);
+                numbers.splice(i+1, 1);
+                numbers.splice(i, 1);
+                numbers.splice(i, 0, result);
+            }
+
+            if (operators[i] === '/') {
+                result = div(numbers[i], numbers[i+1]);
+                operators.splice(i, 1);
+                numbers.splice(i+1, 1);
+                numbers.splice(i, 1);
+                numbers.splice(i, 0, result);
+            }
+        }
+
+        //Procura por adições e subtrações
+        for (let i = 0; i < operators.length; i++) {
+            if (operators[i] === '+') {
+                result = add(parseFloat(numbers[i]), parseFloat(numbers[i+1]));
+                operators.splice(i, 1);
+                numbers.splice(i+1, 1);
+                numbers.splice(i, 1);
+                numbers.splice(i, 0, result);
+            }
+
+            if (operators[i] === '-') {
+                result = sub(numbers[i], numbers[i+1]);
                 operators.splice(i, 1);
                 numbers.splice(i+1, 1);
                 numbers.splice(i, 1);
@@ -32,6 +70,9 @@ app.post('/calculate', (req, res) => {
 
         result = numbers[0];
     }
+
+    console.log("Numbers:", numbers);
+    console.log("Operators:", operators)
 
     const response = {
         message: result,
@@ -45,7 +86,7 @@ app.post('/calculate', (req, res) => {
 });
 
 const port = 3000;
-app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
+app.listen(port, () => console.log(`Servidor a correr em http://localhost:${port}`));
 
 //Funções das operações
 
