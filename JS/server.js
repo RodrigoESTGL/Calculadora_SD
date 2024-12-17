@@ -55,7 +55,7 @@ app.post('/calculate', (req, res) => {
             }
 
             if (operators[i] === '/') {
-                result = div(numbers[i], numbers[i+1]);
+                result = div(parseFloat(numbers[i]), parseFloat(numbers[i+1]));
                 operators.splice(i, 1);
                 numbers.splice(i+1, 1);
                 numbers.splice(i, 1);

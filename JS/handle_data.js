@@ -8,7 +8,7 @@ function retrieve_data() {
     console.log("Texto do resultado: ", data);
 
     //Divide em numeros e operadores
-    numbers_split = data.split(/[+\-x√]/);
+    numbers_split = data.split(/[+\-x√/]/);
     operators_match = data.match(/[+\-x√/]/g);
 
     if (numbers_split === null) {
