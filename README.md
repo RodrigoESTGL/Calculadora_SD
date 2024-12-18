@@ -21,11 +21,13 @@ Clonar repositório:
 ```bash
 git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD
 
+```markdown
 Instalar dependências:
 
 ```bash
 npm install
 
+```markdown
 Correr o servidor em modo desenvolvimento:
 
 ```bash
