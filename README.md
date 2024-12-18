@@ -1,4 +1,4 @@
-#Calculadora - Sistemas Distribuídos
+# Calculadora - Sistemas Distribuídos
 
 **Escola:** Escola Superior de tecnologia e Gestão de Lamego
 
@@ -18,12 +18,15 @@
 
 Clonar repositório:
 
-`git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD`
+```bash
+git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD
 
 Instalar dependências:
 
-`npm install`
+```bash
+npm install
 
 Correr o servidor em modo desenvolvimento:
 
-`nodemon /JS/server.js`
+```bash
+nodemon /JS/server.js
