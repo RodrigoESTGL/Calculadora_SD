@@ -1,6 +1,6 @@
 # Calculadora - Sistemas Distribuídos
 
-**Escola:** Escola Superior de tecnologia e Gestão de Lamego
+**Escola:** Escola Superior de Tecnologia e Gestão de Lamego
 
 **Docente:** Nuno Romeu Cardoso Sequeira 
 
@@ -8,7 +8,7 @@
 
 **Estudantes:** Ricardo Cunha, Rodrigo Siqueira e Ronilson Gomes 
 
-**Projeto:** Calculadora em modelo cliente-servidor.
+**Projeto:** Calculadora Distribuída em Modelo Cliente-Servidor com API RESTful.
 
 **Front-end:** Desenvolvido por Rodrigo Siqueira (HTML, CSS and JavaScript)
 
