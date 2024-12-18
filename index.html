@@ -2,14 +2,14 @@
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Calculadora</title>
     <link rel="stylesheet" href="styles.css">
     <script src="js/handle_data.js"></script>
 </head>
 <body>
     <div class= "background">
-        <h1>Trabalho prático - Calculadora</h1>
+        <h1 id ="text">Trabalho prático - Calculadora</h1>
         <img  id="logoIPV"  src="image/Sem título.png" alt="Logo IPV">
         <img id="logoESTGL" src="image/Sem título1.png" alt="Logo ESTGL">
         <div class="calculadora">
@@ -54,7 +54,7 @@
                 <tr>
                     <td><button class="button" onclick="NegativeNumber()">+/-</button></td>
                     <td><button class="button" onclick = "insert('0')">0</button></td>
-                    <td><button class="button" onclick="insert('.')">.</button></td>
+                    <td><button class="button" onclick="insert(',')">,</button></td>
                     <td><button class="dfbutton" onclick="egual()">=</button></td>
                 </tr>
             </table>
