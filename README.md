@@ -10,11 +10,11 @@
 
 **Projeto:** Calculadora Distribuída em Modelo Cliente-Servidor com API RESTful.
 
-**Front-end:** Desenvolvido por Rodrigo Siqueira (HTML, CSS and JavaScript)
+**Front-end:** Desenvolvido por Rodrigo Siqueira (HTML, CSS e JavaScript)
 
-**Back-end:** Desenvolvido por Ricardo Cunha (Express.js and JSON)
+**Back-end:** Desenvolvido por Ricardo Cunha (Express.js e JSON)
 
-**Configuração do Docker e da Base de Dados:** Desenvolvido por Ronilson Gomes (Docker and PostgreSQL)
+**Configuração do Docker e da Base de Dados:** Desenvolvido por Ronilson Gomes (Docker e PostgreSQL)
 
 ## Instalar
 
