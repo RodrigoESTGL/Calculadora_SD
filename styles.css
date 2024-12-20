@@ -8,11 +8,12 @@ html,body {
 
 .background{
 background-image: url(image/bg-3.jpg);
+top: 0%;
+right: 0%;
 height: 100vh;
 color:black;
 text-align: center;
 background-size: cover;
-
 }
 
 .calculadora{
@@ -78,11 +79,11 @@ border-radius: 20px;
     left: 2%;
 }   
     #logoESTGL{
-        position: absolute;
+        position: relative;
         height: 500px;
         width: 800px;
-        top: 690px;
-        right:-33%;
+        top: 81%;
+        right: -56%;
     }
     
     #logo3R{
@@ -92,86 +93,71 @@ border-radius: 20px;
         width: 120px;
     }
 
-/* Responsividade (tela média)*/
-@media (max-width: 768px) {
-    html,body{
-        overflow: hidden;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        touch-action: manipulation;
-    }
-    .calculadora {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        font-size: 16px;
-        padding: 15;
+    @media screen and (max-width:700px) {
+
+        .background{
+            top: 0%;
+            right: 0%;
+            height: 100vh;
+            
+            }
+        #logoESTGL{
+            position: relative;
+            height: 400px;
+            width: 600px;
+            top: 81%;
+            right:-60%;
+        }
+        
+        #logoIPV{
+            position: absolute;
+            height: 400px;
+            width: 600px;
+            top: 670px;
+            left: 2%;
+        }   
     }
 
-    .button, .dfbutton {
-        height: 50px;
-        width: 50px;
-        font-size: 20px;
+
+    @media screen and (max-width:516px) {
+
+        .background{
+            top: 0%;
+            right: 0%;
+            height: 100vh;
+            position: fixed;
+            }
+
+        #logoESTGL{
+            display: none;
+        }
+        
+        #logoIPV{
+            display: ;
+        }   
     }
 
-    #result {
-        height: 30px;
-        width: 195px;
-        font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: right;
-        background-color: #FFF;
-        color: black;
-        margin: 6px;
-        padding: 5px;
-    }
 
-    #logoIPV {
-        position: absolute;
-        height: 300px;
-        width: 500px;
-        top: 680px;
-        left: 5%;
-    }
+    @media screen and (max-width:450px) {
 
-    #logoESTGL {
-        position: absolute;
-        height: 300px;
-        width: 500px;
-        top: 690px;
-        right: -310px;
-    }
-}
+        .background{
+            top: 0%;
+            left: 0%;
+            height: 100vh;
+            position: fixed;
+            }
 
-/*Responsividade (tela pequena)*/
-@media (max-width: 580px) {
-    html,body{
-        overflow: hidden;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        touch-action: manipulation;
+        .calculadora{
+            top:51%;
+        }
+        #text{
+            font-size: 22px;
+        }
+        #logoESTGL{
+            display: none;
+        }
+        
+        #logoIPV{
+            display: none;
+        }   
     }
-    .calculadora {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        padding: 10px;
-    }
-
-    .button, .dfbutton {
-        height: 40px;
-        width: 40px;
-        font-size: 18px;
-    }
-
-    #result {
-        font-size: 16px;
-        height: 20px;
-        width: 156px;
-    }
-
-    #logoIPV, #logoESTGL {
-        display: none; /* Oculta as logos */
-    }
-}

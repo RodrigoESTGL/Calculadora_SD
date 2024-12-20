@@ -1,16 +1,34 @@
-**_School:_** Escola Superior de tecnologia e Gestão de Lamego
+# Calculadora - Sistemas Distribuídos
 
-_**Teacher:**_ Romeu Sequeira 
+**Escola:** Escola Superior de Tecnologia e Gestão de Lamego
 
-**_Discipline:_** Sistemas Distribuidos
+**Docente:** Nuno Romeu Cardoso Sequeira 
 
-**_Students:_** Ricardo Cunha, Rodrigo Siqueira e Ronilson Gomes 
+**Disciplina:** Sistemas Distribuidos
 
-**_Project:_** Calculadora
+**Estudantes:** Ricardo Cunha, Rodrigo Siqueira e Ronilson Gomes 
 
-_Front-end: Developed by Rodrigo Siqueira (HTML, CSS and JavaScript)
+**Projeto:** Calculadora Distribuída em Modelo Cliente-Servidor com API RESTful.
 
-Back-end: Developed by Ricardo Cunha (PHP and Json)
+**Front-end:** Desenvolvido por Rodrigo Siqueira (HTML, CSS e JavaScript)
 
-Docker environment development: Developed by Ronilson Gomes (Docker)
-_
+**Back-end:** Desenvolvido por Ricardo Cunha (Express.js e JSON)
+
+**Configuração do Docker e da Base de Dados:** Desenvolvido por Ronilson Gomes (Docker e PostgreSQL)
+
+## Instalar
+
+Clonar repositório:
+```bash
+git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD
+```
+
+Instalar dependências:
+```bash
+npm install
+```
+
+Correr o servidor em modo desenvolvimento:
+```bash
+nodemon /JS/server.js
+```
