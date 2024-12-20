@@ -1,21 +1,47 @@
 
 const maxcaracter = 18;
+let expControl = false;
 
-function insert(num){
+let exponents = {}
+let length;
+
+function insert(num, exp=false){
     
     let result = document.getElementById("result").innerHTML;
+    let resultlength = result.length.toString();
 
     if (result.length <= maxcaracter){
         let lastChar = result.slice(-1) //armazena na variavel o ultimo valor inserido  
 
-        let operators = ['+','-','/','%', 'x', '√', ','];
+        let operators = ['+','-','/','%', 'x', '√', ',']; 
+
+        if (expControl) { //Nao se podem escrever mais numeros no setor onde se termina com um expoente
+            if (!isNaN(num)) {
+                return;
+            } else {
+                expControl = false;
+                document.getElementById("result").innerHTML += num;
+            }
+        }
         
-        if (operators.includes(num) && lastChar.includes(num) && fatorial.length(num)){
+        else if (operators.includes(num) && lastChar.includes(num) && fatorial.length(num)){ //Nao repetir caracteres
             return;
         }
         else{
                 document.getElementById("result").innerHTML += num;
             }
+
+        if (exp) { //Controlo de inserção de expoentes
+            expControl = true;
+
+            length = document.getElementById("result").textContent.length;
+
+            console.log(document.getElementById("result").textContent);
+
+            exponents[length] = num;
+
+            console.log("Expoentes: ", exponents);
+        }
     }   
 }
 
@@ -50,6 +76,12 @@ var result= document.getElementById('result').innerHTML;
 if (result){
     let data_to_send = retrieve_data();
     fetch_and_send(data_to_send, 'http://localhost:3000/calculate');
+
+    //Converter dicionario dos expoentes para um cookie
+
+    let dictionary = JSON.stringify(exponents);
+    document.cookie = `exponents=${dictionary}; path=/`;
+
 } else{
     document.getElementById("result").innerHTML = "";
 }

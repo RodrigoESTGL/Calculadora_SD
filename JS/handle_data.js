@@ -1,3 +1,16 @@
+function get_cookie(n) {
+    const cookies = document.cookies.split("; ");
+
+    for (let cookie of cookies) {
+        const [key, value] = cookie.split("=");
+        if (key === n) {
+            return value;
+        }
+    }
+
+    return null;
+}
+
 function retrieve_data() {
     let paragrafo = document.getElementById("result");
     let data = paragrafo.textContent;
@@ -5,6 +18,14 @@ function retrieve_data() {
     let numbers_split;
     let operators_match;
 
+    let exponentsString = get_cookie("exponents");
+
+    if (exponentsString) {
+        let exponents = JSON.parse(exponentsString);
+        console.log(exponents);
+    }
+
+    console.log("Paragrafo bruto: ", paragrafo);
     console.log("Texto do resultado: ", data);
 
     //Divide em numeros e operadores

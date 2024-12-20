@@ -15,6 +15,9 @@ app.post('/calculate', (req, res) => {
     let numbercut;
     let result;
 
+    console.log(operators);
+    console.log(numbers);
+
     if (numbers.length !== operators.length + 1) {
         resultado = "Formato inválido";
         calcStatus = false;
