@@ -20,14 +20,14 @@
             <table>
                 <tr>
                     <td><button class="button" onclick="insert('%')">%</button></td>
-                    <td><button class="button" onclick="insert('<sup>3</sup>', exp=true)">x<sup>3</sup></button></td>
+                    <td><button class="button" onclick="insert('<sup>3</sup>'); handle_exponent(3)">x<sup>3</sup></button></td>
                     <td><button class="button" onclick="clean()">C</button></td>
                     <td><button class="button" onclick="delete_Number()">&lt;</button></td> <!--&lt representa o sinal de (<)-->
                 </tr>
 
                 <tr>
                     <td><button class="button" onclick="insert('1/')">1/x</button></td>
-                    <td><button class="button" onclick="insert('<sup>2</sup>', exp=true)">x<sup>2</sup></button></td>
+                    <td><button class="button" onclick="insert('<sup>2</sup>'); handle_exponent(2)">x<sup>2</sup></button></td>
                     <td><button class="button" onclick="insert('√')"> &radic;x</button></td> <!--Representação do radical (&radic)-->
                     <td><button class="button" style="font-size: 33px;" onclick="insert('/')">&divide;</button></td> <!--&divide representa o sinal de (divisão)-->
                 <tr>

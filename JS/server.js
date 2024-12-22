@@ -9,6 +9,7 @@ app.post('/calculate', (req, res) => {
     const data = req.body;
     let operators = data.operators;
     let numbers = data.numbers;
+    let exponents = data.exponents;
     let calcStatus = true;
     let resultado;
     let index;
@@ -17,11 +18,18 @@ app.post('/calculate', (req, res) => {
 
     console.log(operators);
     console.log(numbers);
+    console.log(exponents);
 
     if (numbers.length !== operators.length + 1) {
         resultado = "Formato inválido";
         calcStatus = false;
     } else {
+
+        //Procura por expoentes
+        for (const key in exponents) {
+            result = exponent(parseFloat(numbers[key]), parseInt(exponents[key]));
+            numbers[key] = result;            
+        }
 
         //Procura por percentagens
         for (let i = 0; i < numbers.length; i++) { //Indices dos numeros
@@ -129,4 +137,8 @@ const squareroot = a => {
 
 const percentage = a => {
     return a/100;
+}
+
+const exponent = (a, b) => {
+    return a ** b;
 }

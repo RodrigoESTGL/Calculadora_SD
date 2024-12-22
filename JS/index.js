@@ -5,10 +5,9 @@ let expControl = false;
 let exponents = {}
 let length;
 
-function insert(num, exp=false){
+function insert(num){
     
     let result = document.getElementById("result").innerHTML;
-    let resultlength = result.length.toString();
 
     if (result.length <= maxcaracter){
         let lastChar = result.slice(-1) //armazena na variavel o ultimo valor inserido  
@@ -30,19 +29,19 @@ function insert(num, exp=false){
         else{
                 document.getElementById("result").innerHTML += num;
             }
-
-        if (exp) { //Controlo de inserção de expoentes
-            expControl = true;
-
-            length = document.getElementById("result").textContent.length;
-
-            console.log(document.getElementById("result").textContent);
-
-            exponents[length] = num;
-
-            console.log("Expoentes: ", exponents);
-        }
     }   
+}
+
+function handle_exponent(n) {
+    expControl = true;
+
+    length = document.getElementById("result").textContent.length;
+
+    console.log(document.getElementById("result").textContent);
+
+    exponents[length-1] = n;
+
+    console.log("Expoentes: ", exponents);
 }
 
 
@@ -72,6 +71,7 @@ document.getElementById("result").innerHTML = result.substring(0, result.length 
 
 function egual(){
 var result= document.getElementById('result').innerHTML; 
+expControl = false;
 
 if (result){
     let data_to_send = retrieve_data();

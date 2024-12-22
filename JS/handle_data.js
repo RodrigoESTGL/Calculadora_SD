@@ -1,5 +1,5 @@
 function get_cookie(n) {
-    const cookies = document.cookies.split("; ");
+    const cookies = document.cookie.split("; ");
 
     for (let cookie of cookies) {
         const [key, value] = cookie.split("=");
@@ -20,10 +20,7 @@ function retrieve_data() {
 
     let exponentsString = get_cookie("exponents");
 
-    if (exponentsString) {
-        let exponents = JSON.parse(exponentsString);
-        console.log(exponents);
-    }
+    let exponentFinal = {}; //Dicionario final enviado para o servidor
 
     console.log("Paragrafo bruto: ", paragrafo);
     console.log("Texto do resultado: ", data);
@@ -61,9 +58,29 @@ function retrieve_data() {
     console.log(numbers_split);
     console.log(operators_match);
 
+    if (exponentsString) { //Se houver cookie de expoentes
+        let exponents = JSON.parse(exponentsString);
+        let contador = 0;
+
+        for (const key in exponents) {
+            for (let i = 0; i < numbers_split.length; i++) {
+                contador += numbers_split[i].length;
+                if (parseInt(key) <= contador) {
+                    numbers_split[i] = numbers_split[i].slice(0, -1); //Elimina ultimo caractere
+                    exponentFinal[i] = exponents[key]; //Atualiza o indice onde o expoente vai atuar
+                    
+                    console.log("Dicionario de expoentes finais atualizado: ", exponentFinal);
+                    
+                    break;
+                }  
+            }
+        }
+    }
+
     let data_to_send = {
         numbers: numbers_split,
         operators: operators_match,
+        exponents: exponentFinal,
         timeStamp: new Date()
     };
 
