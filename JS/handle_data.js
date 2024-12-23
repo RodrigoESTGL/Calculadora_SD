@@ -1,4 +1,4 @@
-function get_cookie(n) {
+function get_cookie(n) { //Dicionarios
     const cookies = document.cookie.split("; ");
 
     for (let cookie of cookies) {
@@ -19,6 +19,9 @@ function retrieve_data() {
     let operators_match;
 
     let exponentsString = get_cookie("exponents");
+    let negativesString = get_cookie("negatives");
+
+    console.log("aaa:",negativesString);
 
     let exponentFinal = {}; //Dicionario final enviado para o servidor
 
@@ -76,6 +79,22 @@ function retrieve_data() {
             }
         }
     }
+
+    if (negativesString) { //Se houver cookie de negativos
+        let negatives = JSON.parse(negativesString);
+
+        console.log("Negative string: ", negatives);
+        console.log("Negative string length: ", negatives.length);
+
+        for (let i = 0; i < negatives.length; i++) {
+            numbers_split[i] = "-" + numbers_split[i];
+            operators_match.splice(i, 1);
+        }
+    }
+
+    console.log("Numeros finais: ", numbers_split);
+    console.log("Operadores finais: ", operators_match);
+    console.log("Expoentes finais: ", exponentFinal);
 
     let data_to_send = {
         numbers: numbers_split,

@@ -3,6 +3,7 @@ const maxcaracter = 18;
 let expControl = false;
 
 let exponents = {}
+let negatives = []
 let length;
 
 function insert(num){
@@ -48,12 +49,17 @@ function handle_exponent(n) {
 let isNegative = false;
 function NegativeNumber() {
     isNegative = !isNegative;
+
     if (isNegative) {
         document.getElementById("result").innerHTML = "-";
+
+        negatives.push(document.getElementById("result").textContent.length - 1);
     } else {
         var result = document.getElementById("result").innerHTML;
         document.getElementById("result").innerHTML = result.substring(0, result.length -1);
     }
+
+    console.log("Negativos: ", negatives);
 }
 
 let positive = false; 
@@ -62,6 +68,10 @@ let positive = false;
 
 function clean(){
     document.getElementById("result").innerHTML = "";
+    expControl = false;
+    isNegative = false;
+    exponents = {};
+    negatives = [];
 }
 
 function delete_Number(){
@@ -72,6 +82,7 @@ document.getElementById("result").innerHTML = result.substring(0, result.length 
 function egual(){
 var result= document.getElementById('result').innerHTML; 
 expControl = false;
+isNegative = false;
 
 if (result){
     let data_to_send = retrieve_data();
@@ -80,7 +91,13 @@ if (result){
     //Converter dicionario dos expoentes para um cookie
 
     let dictionary = JSON.stringify(exponents);
-    document.cookie = `exponents=${dictionary}; path=/`;
+    let dictionary2 = JSON.stringify(negatives);
+    document.cookie = `exponents=${dictionary}; path=/` 
+    document.cookie = `negatives=${dictionary2}; path=/`;
+    console.log(document.cookie);
+
+    exponents = {};
+    negatives = [];
 
 } else{
     document.getElementById("result").innerHTML = "";
