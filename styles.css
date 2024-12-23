@@ -71,21 +71,22 @@ border-radius: 20px;
     padding: 5px;
 }
 
-#logoIPV{
+#logoIPV {
     position: absolute;
-    height: 500px;
-    width: 800px;
-    top: 670px;
-    left: 2%;
-}   
-    #logoESTGL{
-        position: relative;
-        height: 500px;
-        width: 800px;
-        top: 81%;
-        right: -56%;
-    }
-    
+    top: 660px; 
+    left: 20px; 
+    height: 400px; 
+    width: auto; 
+}
+
+#logoESTGL {
+    position: absolute;
+    top: 675px;
+    left: 1240px; 
+    height: 400px; 
+    width: auto; 
+}
+
     #logo3R{
         text-align: center;
         position: relative;
@@ -93,50 +94,36 @@ border-radius: 20px;
         width: 120px;
     }
 
-    @media screen and (max-width:700px) {
 
-        .background{
-            top: 0%;
-            right: 0%;
-            height: 100vh;
-            
-            }
+    @media screen and (max-width:1325px) {
+
         #logoESTGL{
             position: relative;
             height: 400px;
             width: 600px;
-            top: 81%;
-            right:-60%;
+            top: 79%;
+            right:-30%;
         }
         
         #logoIPV{
-            position: absolute;
+            position:relative;
             height: 400px;
             width: 600px;
-            top: 670px;
-            left: 2%;
+            top: 77%;
+            left: 0%;
         }   
     }
 
-
-    @media screen and (max-width:516px) {
-
-        .background{
-            top: 0%;
-            right: 0%;
-            height: 100vh;
-            position: fixed;
-            }
+    @media screen and (max-width:1260px) {
 
         #logoESTGL{
             display: none;
         }
         
         #logoIPV{
-            display: ;
+            display: none;
         }   
     }
-
 
     @media screen and (max-width:450px) {
 
