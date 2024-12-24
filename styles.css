@@ -5,30 +5,100 @@ html,body {
     touch-action: manipulation;
     }
 
-
 .background{
-background-image: url(image/bg-3.jpg);
-top: 0%;
-right: 0%;
-height: 100vh;
-color:black;
-text-align: center;
-background-size: cover;
+    background-image: url(image/bg-3.jpg);
+    top: 0%;
+    right: 0%;
+    height: 100vh;
+    color:black;
+    text-align: center;
+    background-size: cover;
+}
+
+nav.side-menu{
+    width: 47px;
+    height: 22vh;
+    background-color: white;
+    box-shadow: 5px 3px 5px rgb(211, 209, 209);
+    overflow: hidden;
+    transition: 1s;
+}
+
+nav.side-menu.expandir{
+    width: 230px;
+    height: 45vh;
+}
+
+.btn-expandir{
+    width: 100%;
+    position: relative;
+    font-size: 27px;
+    cursor: pointer;
+    right: 3px;
+}
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.itens-menu a{
+    color: black;
+    position: relative;
+    right: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+
+ul li.itens-menu{
+    transition: 1s;
+}
+
+ul li.classON{
+    background-color: rgb(211, 209, 209);
+}
+
+ul li.itens-menu:hover{
+    background-color: rgb(211, 209, 209);
+}
+
+ul li.itens-menu:hover .icon{
+    background-color: rgb(211, 209, 209);
+    transition: 1s;
+}
+ul li.itens-menu a .txt-link{
+    margin-left: 40px;
+    transition: 1s;
+}
+
+nav.side-menu.expandir .txt-link{
+    margin-left: 20px;
+    transition: 1s;
+}
+
+ul li.itens-menu a .icon{
+    font-size: 23px;
+}
+
+.link-Aca {
+    pointer-events: none;
 }
 
 .calculadora{
-font-family: 'Times New Roman', Times, serif;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
-background-color: black;
-text-align: center;
-font-size: 18px;
-color: #FFF;
-border: 30px;
-padding: 10px;
-border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: black;
+    text-align: center;
+    font-size: 18px;
+    color: #FFF;
+    border: 30px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .button{
@@ -87,16 +157,14 @@ border-radius: 20px;
     width: auto; 
 }
 
-    #logo3R{
-        text-align: center;
-        position: relative;
-        height:60px;
-        width: 120px;
-    }
-
+#logo3R{
+    text-align: center;
+    position: relative;
+    height:60px;
+    width: 120px;
+}
 
     @media screen and (max-width:1325px) {
-
         #logoESTGL{
             position: relative;
             height: 400px;
@@ -115,6 +183,19 @@ border-radius: 20px;
     }
 
     @media screen and (max-width:1260px) {
+        #logoESTGL{
+            display: none;
+        }
+        
+        #logoIPV{
+            display: none;
+        }   
+    }
+
+    @media screen and (max-width:950px) {
+        nav.side-menu{
+            display:none;
+         }
 
         #logoESTGL{
             display: none;
@@ -126,6 +207,9 @@ border-radius: 20px;
     }
 
     @media screen and (max-width:450px) {
+        nav.side-menu{
+           display:none;
+        }
 
         .background{
             top: 0%;
