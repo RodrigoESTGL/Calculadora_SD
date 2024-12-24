@@ -6,17 +6,44 @@
     <title>Calculadora</title>
     <link rel="stylesheet" href="styles.css">
     <script src="js/handle_data.js"></script>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    </head>
 <body>
+
+
+
+    
     <div class= "background">
         <h1 id ="text">Trabalho prático - Calculadora</h1>
         <img  id="logoIPV"  src="image/Sem título.png" alt="Logo IPV">
         <img id="logoESTGL" src="image/Sem título1.png" alt="Logo ESTGL">
+
+        <nav class="side-menu">
+            <div class="btn-expandir">
+                <i class="bi bi-list" id="btn-list"></i>
+            </div>
+                <ul>
+                    <li class="itens-menu">
+                        <a href="a" class="link-Aca">
+                            <span class="icon"><i class="bi bi-book"></i></span>
+                            <span class="txt-link">Historic</span>
+                        </a>
+                        <div class="dynamic-content" id="historic-content"></div>
+                    </li>
+                    <li class="itens-menu">
+                            <a href="a" class="link-Aca">
+                                <span class="icon"><i class="bi bi-exclamation-circle"></i></span>
+                                <span class="txt-link">About</span>
+                            </a>
+                            <div class="dynamic-content" id="about-content"></div>
+                        </li>
+                </ul>
+        </nav>
+
         <div class="calculadora">
             <img id = "logo3R" src="image/logo-4.png" alt="logo 3R">
             
             <p id="result"></p>
-
             <table>
                 <tr>
                     <td><button class="button" onclick="insert('%')">%</button></td>
@@ -59,7 +86,9 @@
                 </tr>
             </table>
         </div>
+
     </div>
     <script src="JS/index.js"></script> <!--Caminho JavaScript-->
+    <script src = "JS/menu.js"></script>
 </body>
 </html>
