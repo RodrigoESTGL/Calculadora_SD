@@ -17,7 +17,7 @@ html,body {
 
 nav.side-menu{
     width: 47px;
-    height: 22vh;
+    height: 25vh;
     background-color: white;
     box-shadow: 5px 3px 5px rgb(211, 209, 209);
     overflow: hidden;
@@ -26,7 +26,7 @@ nav.side-menu{
 
 nav.side-menu.expandir{
     width: 230px;
-    height: 45vh;
+    height: 50vh;
 }
 
 .btn-expandir{

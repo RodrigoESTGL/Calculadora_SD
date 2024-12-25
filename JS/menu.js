@@ -1,12 +1,14 @@
 
 var menuIntem = document.querySelectorAll('.itens-menu');
-var historicContent = document.querySelector('#historic-content');
+var historyContent = document.querySelector('#history-content');
 var aboutContent = document.querySelector('#about-content');
+var technologyContent = document.querySelector('#technology-content')
 
 // Função para esconder conteúdo
 function hideContent() {
-    historicContent.innerHTML = ''; 
+    historyContent.innerHTML = ''; 
     aboutContent.innerHTML = '';
+    technologyContent.innerHTML = '';
 }
 
 function selectlink(){
@@ -21,14 +23,18 @@ function selectlink(){
     var linkText = this.querySelector('.txt-link').textContent.toLowerCase();
     var dynamicContentN;
 
-    if (linkText === 'historic') {
+    if (linkText === 'history') {
         //Lógica para as informações do banco de dados. 
-        dynamicContentN = this.querySelector('#historic-content');
+        dynamicContentN = this.querySelector('#history-content');
         dynamicContentN.innerHTML = "<p>Histórico das operações</p>";
-    } else if (linkText === 'about') {
+    } else if (linkText === 'technology') {
+        dynamicContentN = this.querySelector('#technology-content');
+        dynamicContentN.innerHTML = "<p><b>Front-End:</b> HTML,CSS e JavaScript<br><b>Back-End:</b> Express.js e JSON<br><b>»</b> Docker e Base de dados (PostgreSQL)</p>";
+    }else if (linkText === 'about') {
         dynamicContentN = this.querySelector('#about-content');
         dynamicContentN.innerHTML = "<p>Esta é uma calculadora simples que permite realizar operações matemáticas básicas.</li> <br><br><b>Grupo:</b> Rodrigo Siqueira, Ricardo Cunha e Ronilson Gomes</li></p>";
     }
+
 }
 
 //Aguarda um evento especifico para executar o evento
