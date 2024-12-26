@@ -16,19 +16,31 @@
 
 **Configuração do Docker e da Base de Dados:** Desenvolvido por Ronilson Gomes (Docker e PostgreSQL)
 
-## Instalar
+## Configuração Docker
 
-Clonar repositório:
+Criar container:
 ```bash
-git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD
+docker run -it -p 8080:80 -p 3000:3000 --name teste-SD ubuntu
 ```
 
 Instalar dependências:
 ```bash
-npm install
+apt update && apt install apache2 -y && apt install git -y && apt install npm -y
 ```
 
-Correr o servidor em modo desenvolvimento:
+Iniciar o apache:
 ```bash
-nodemon /JS/server.js
+service apache2 start && cd /var/www/html
 ```
+
+Clonar repositório e instalar dependências:
+```bash
+git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD && npm install
+```
+
+Correr o servidor:
+```bash
+node JS/server.js
+```
+
+Após isso, é só aceder a [localhost:8080/Calculadora_SD](http://localhost:8080/Calculadora_SD)
