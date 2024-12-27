@@ -72,6 +72,10 @@ function clean(){
     isNegative = false;
     exponents = {};
     negatives = [];
+
+    //Limpar cookies
+    document.cookie="exponents=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie="negatives=; expores=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
 function delete_Number(){
@@ -85,8 +89,9 @@ expControl = false;
 isNegative = false;
 
 if (result){
-    let data_to_send = retrieve_data();
-    fetch_and_send(data_to_send, 'http://localhost:3000/calculate');
+    //Limpar cookies
+    document.cookie="exponents=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie="negatives=; expores=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
     //Converter dicionario dos expoentes para um cookie
 
@@ -96,8 +101,15 @@ if (result){
     document.cookie = `negatives=${dictionary2}; path=/`;
     console.log(document.cookie);
 
+    let data_to_send = retrieve_data();
+    fetch_and_send(data_to_send, 'http://localhost:3000/calculate');
+
     exponents = {};
     negatives = [];
+
+    //Limpar cookies
+    document.cookie="exponents=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie="negatives=; expores=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
 } else{
     document.getElementById("result").innerHTML = "";

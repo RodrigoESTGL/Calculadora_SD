@@ -17,13 +17,12 @@ function retrieve_data() {
     let index;
     let numbers_split;
     let operators_match;
+    let exponentFinal = {}; //Dicionario final enviado para o servidor
 
     let exponentsString = get_cookie("exponents");
     let negativesString = get_cookie("negatives");
 
     console.log("aaa:",negativesString);
-
-    let exponentFinal = {}; //Dicionario final enviado para o servidor
 
     console.log("Paragrafo bruto: ", paragrafo);
     console.log("Texto do resultado: ", data);
@@ -77,6 +76,7 @@ function retrieve_data() {
                     break;
                 }  
             }
+            contador = 0;
         }
     }
 
