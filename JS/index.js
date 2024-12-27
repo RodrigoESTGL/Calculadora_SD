@@ -101,6 +101,9 @@ if (result){
     document.cookie = `negatives=${dictionary2}; path=/`;
     console.log(document.cookie);
 
+    //Enviar dados para o histórico
+    insert_history(document.getElementById('result').textContent);
+
     let data_to_send = retrieve_data();
     fetch_and_send(data_to_send, 'http://localhost:3000/calculate');
 

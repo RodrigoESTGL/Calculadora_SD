@@ -137,9 +137,37 @@ app.get('/connect-db', (req, res) => {
     });
 });
 
+//Endpoint para inserir dados no histórico
+app.post('/insert-history', async (req, res) => {
+    
+    const {nome, timeStamp} = req.body;
+
+    console.log("Nome:", nome);
+    console.log("Time:", timeStamp);
+
+    if (!nome || !timeStamp) {
+        return res.status(400).send('Os campos nome e timestamp são obrigatórios.');
+      }
+
+    try {
+        const query = 'INSERT INTO public."Participantes"("Nome") VALUES ($1);';
+        const values = [nome];
+
+        console.log(query);
+
+        await pool.query(query, values);
+
+        res.status(201).json({ message: 'Operação inserida com sucesso!' });
+    } catch (err) {
+        console.error("Erro ao inserir a operação:", err);
+        res.status(500).send("Erro na inserção da operação.");
+    }
+});
+
+//Endpoint para ir buscar dados do histórico
 app.get('/get-history', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM public."Participantes"'); //Mudar o nome da tabela aqui
+        const result = await pool.query('SELECT * FROM public."Participantes" ORDER BY "Id" DESC LIMIT 5'); //Mudar o nome da tabela aqui
         
         res.json(result.rows); // result.rows contém os dados retornados
       } catch (err) {

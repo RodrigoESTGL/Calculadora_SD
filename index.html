@@ -38,6 +38,34 @@
                     alert("Erro ao obter o histórico:", error);
                 });
         }
+
+        function insert_history(a) {
+            let dados = {
+                nome: a,
+                timeStamp: new Date()
+            }
+
+            fetch("http://localhost:3000/insert-history", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro na requisição: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error("Erro ao inserir o valor no histórico:", error);
+                    alert("Erro ao inserir valor no histórico: " + error.message);
+                })
+        }
     </script>
 
     </head>
