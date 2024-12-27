@@ -26,7 +26,7 @@ function selectlink(){
     if (linkText === 'history') {
         //Lógica para as informações do banco de dados. 
         dynamicContentN = this.querySelector('#history-content');
-        dynamicContentN.innerHTML = "<p>Histórico das operações</p>";
+        get_history(dynamicContentN);
     } else if (linkText === 'technology') {
         dynamicContentN = this.querySelector('#technology-content');
         dynamicContentN.innerHTML = "<p><b>Front-End:</b> HTML,CSS e JavaScript<br><b>Back-End:</b> Express.js e JSON<br><b>»</b> Docker e Base de dados (PostgreSQL)</p>";
@@ -44,7 +44,7 @@ menuIntem.forEach((item)=>
 
 //Expandir menu 
 var btn_List = document.querySelector('#btn-list');
-var sideMenu = document.querySelector('.side-menu')
+var sideMenu = document.querySelector('.side-menu');
 
 btn_List.addEventListener('click', function(){
     sideMenu.classList.toggle('expandir')

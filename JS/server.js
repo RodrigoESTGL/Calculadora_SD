@@ -5,6 +5,16 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
+const { Pool } = require('pg'); //Conector com o Postgre
+
+const pool = new Pool({ //Mudar aqui
+    user: 'ricardo',
+    host: 'localhost',
+    database: 'rrr',
+    password: 'ricardo',
+    port: 5432,
+});
+
 app.post('/calculate', (req, res) => {
     const data = req.body;
     let operators = data.operators;
@@ -112,6 +122,31 @@ app.post('/calculate', (req, res) => {
 
 const port = 3000;
 app.listen(port, () => console.log(`Servidor a correr em http://localhost:${port}`));
+
+
+// Endpoint para conectar a base de dados
+app.get('/connect-db', (req, res) => {
+    pool.query('SELECT NOW()', (err, result) => {
+        if (err) {
+            console.error('Erro ao conectar ao PostgreSQL:', err);
+            res.status(500).send('Erro ao conectar a base de dados');
+        } else {
+            console.log('Conexão bem-sucedida. Hora atual:', result.rows[0].now);
+            res.send(`Conexão bem-sucedida. Hora atual: ${result.rows[0].now}`);
+        }
+    });
+});
+
+app.get('/get-history', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM public."Participantes"'); //Mudar o nome da tabela aqui
+        
+        res.json(result.rows); // result.rows contém os dados retornados
+      } catch (err) {
+        console.error('Erro ao executar a consulta:', err);
+        res.status(500).send('Erro ao obter o histórico.');
+      }
+});
 
 //Funções das operações
 
