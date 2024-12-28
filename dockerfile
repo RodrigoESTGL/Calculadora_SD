@@ -1,24 +1,22 @@
-FROM ubuntu:latest
+FROM postgres:16
 
 RUN apt update && apt install -y \
-    postgresql postgresql-contrib \
 	apache2 \
 	npm \
 	git \
-	curl
+	curl \
+	postgresql-contrib
 
 ENV POSTGRES_USER=rrr \
     POSTGRES_PASSWORD=rrr \
 	POSTGRES_DB=Calculadora
-
-RUN sed -i "s/local   all             all                                     peer/local   all             all                                     md5/" /etc/postgresql/*/main/pg_hba.conf
 
 COPY sql/create_table.sql /docker-entrypoint-initdb.d/
 	
 EXPOSE 5432 80 3000
 
 RUN echo "#!/bin/bash\n\
-service postgresql start\n\
+docker-entrypoint.sh postgres &\n\
 service apache2 start\n\
 tail -f /dev/null" > /usr/local/bin/start_services.sh && \
 chmod +x /usr/local/bin/start_services.sh
