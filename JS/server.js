@@ -150,7 +150,7 @@ app.post('/insert-history', async (req, res) => {
       }
 
     try {
-        const query = 'INSERT INTO public."Operacoes"("op") VALUES ($1);';
+        const query = 'INSERT INTO operacoes("op") VALUES ($1);';
         const values = [op];
 
         console.log(query);
@@ -167,7 +167,7 @@ app.post('/insert-history', async (req, res) => {
 //Endpoint para ir buscar dados do histórico
 app.get('/get-history', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM public."Operacoes" ORDER BY "id" DESC LIMIT 5'); //Mudar o nome da tabela aqui
+        const result = await pool.query('SELECT * FROM operacoes ORDER BY "id" DESC LIMIT 5'); //Mudar o nome da tabela aqui
         
         res.json(result.rows); // result.rows contém os dados retornados
       } catch (err) {
