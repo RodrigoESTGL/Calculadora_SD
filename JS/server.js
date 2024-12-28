@@ -145,13 +145,13 @@ app.post('/insert-history', async (req, res) => {
     console.log("Operaçáo:", op);
     console.log("Time:", timeStamp);
 
-    if (!nome || !timeStamp) {
-        return res.status(400).send('Os campos nome e timestamp são obrigatórios.');
+    if (!op || !timeStamp) {
+        return res.status(400).send('Os campos op e timestamp são obrigatórios.');
       }
 
     try {
         const query = 'INSERT INTO public."Operacoes"("op") VALUES ($1);';
-        const values = [nome];
+        const values = [op];
 
         console.log(query);
 
