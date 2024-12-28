@@ -38,7 +38,7 @@ docker run -it -p 8080:80 -p 3000:3000 -p 5432:5432 --name container_sd ambiente
 
 Clonar repositorio dentro do diretório do Apache:
 ```bash
-cd /var/www/html %% git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD
+cd /var/www/html && git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD
 ```
 
 Instalar dependências
