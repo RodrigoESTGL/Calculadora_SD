@@ -167,7 +167,7 @@ app.post('/insert-history', async (req, res) => {
 //Endpoint para ir buscar dados do histórico
 app.get('/get-history', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM operacoes ORDER BY "id" DESC LIMIT 5'); //Mudar o nome da tabela aqui
+        const result = await pool.query('SELECT op FROM operacoes ORDER BY "id" DESC LIMIT 5'); //Mudar o nome da tabela aqui
         
         res.json(result.rows); // result.rows contém os dados retornados
       } catch (err) {
