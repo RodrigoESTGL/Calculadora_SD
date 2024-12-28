@@ -22,7 +22,7 @@
 
 8080: Apache
 
-3000: Servidor web
+3000: API
 
 ## Configuração Docker
 
