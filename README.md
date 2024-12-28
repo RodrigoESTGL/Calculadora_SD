@@ -16,26 +16,34 @@
 
 **Configuração do Docker e da Base de Dados:** Desenvolvido por Ronilson Gomes (Docker e PostgreSQL)
 
+## Portas utilizadas
+
+5432: PostgreSQL
+
+8080: Apache
+
+3000: Servidor web
+
 ## Configuração Docker
 
-Criar container:
+No diretório do dockerfile:
 ```bash
-docker run -it -p 8080:80 -p 3000:3000 --name teste-SD ubuntu
+docker build -t ambiente_sd .
 ```
 
-Instalar dependências:
+Criar container a partir da imagem gerada:
 ```bash
-apt update && apt install apache2 -y && apt install git -y && apt install npm -y
+docker run -it -p 8080:80 -p 3000:3000 -p 5432:5432 --name container_sd ambiente_sd
 ```
 
-Iniciar o apache:
+Clonar repositorio dentro do diretório do Apache:
 ```bash
-service apache2 start && cd /var/www/html
+cd /var/www/html %% git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD
 ```
 
-Clonar repositório e instalar dependências:
+Instalar dependências
 ```bash
-git clone https://github.com/RodrigoESTGL/Calculadora_SD.git && cd Calculadora_SD && npm install
+npm install
 ```
 
 Correr o servidor:
