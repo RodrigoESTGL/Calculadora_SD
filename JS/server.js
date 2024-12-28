@@ -8,10 +8,10 @@ app.use(express.json());
 const { Pool } = require('pg'); //Conector com o Postgre
 
 const pool = new Pool({ //Mudar aqui
-    user: 'ricardo',
+    user: 'rrr',
     host: 'localhost',
-    database: 'rrr',
-    password: 'ricardo',
+    database: 'Calculadora',
+    password: 'rrr',
     port: 5432,
 });
 
@@ -140,9 +140,9 @@ app.get('/connect-db', (req, res) => {
 //Endpoint para inserir dados no histórico
 app.post('/insert-history', async (req, res) => {
     
-    const {nome, timeStamp} = req.body;
+    const {op, timeStamp} = req.body;
 
-    console.log("Nome:", nome);
+    console.log("Operaçáo:", op);
     console.log("Time:", timeStamp);
 
     if (!nome || !timeStamp) {
@@ -150,7 +150,7 @@ app.post('/insert-history', async (req, res) => {
       }
 
     try {
-        const query = 'INSERT INTO public."Participantes"("Nome") VALUES ($1);';
+        const query = 'INSERT INTO public."Operacoes"("op") VALUES ($1);';
         const values = [nome];
 
         console.log(query);
@@ -167,7 +167,7 @@ app.post('/insert-history', async (req, res) => {
 //Endpoint para ir buscar dados do histórico
 app.get('/get-history', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM public."Participantes" ORDER BY "Id" DESC LIMIT 5'); //Mudar o nome da tabela aqui
+        const result = await pool.query('SELECT * FROM public."Operacoes" ORDER BY "id" DESC LIMIT 5'); //Mudar o nome da tabela aqui
         
         res.json(result.rows); // result.rows contém os dados retornados
       } catch (err) {
