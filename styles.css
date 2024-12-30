@@ -1,27 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html,body { 
     overflow: hidden; /*Tira a barra de rolagem do projeto*/
     overflow-x: hidden; /*Tira a barra de rolagem do projeto*/
     user-select: none;
     touch-action: manipulation;
+    width: 100%;
+    height: 100%;
     }
 
 .background{
     background-image: url(image/bg-3.jpg);
     top: 0%;
     right: 0%;
-    height: 100vh;
+    height: 100%;
     color:black;
     text-align: center;
     background-size: cover;
 }
 
 nav.side-menu{
-    width: 47px;
-    height: 25vh;
+    width: 40px;
+    height: 165px;
     background-color: white;
     box-shadow: 5px 3px 5px rgb(211, 209, 209);
     overflow: hidden;
-    transition: 1s;
+    transition: 1s; 
 }
 
 nav.side-menu.expandir{
@@ -30,11 +38,10 @@ nav.side-menu.expandir{
 }
 
 .btn-expandir{
-    width: 100%;
+    width: 15%;
     position: relative;
     font-size: 27px;
     cursor: pointer;
-    right: 3px;
 }
 ul{
     height: 100%;
@@ -44,10 +51,10 @@ ul{
 ul li.itens-menu a{
     color: black;
     position: relative;
-    right: 30px;
     text-decoration: none;
     font-size: 18px;
     display: flex;
+    left: 7px;
     margin-bottom: 15px;
     line-height: 30px;
 }
